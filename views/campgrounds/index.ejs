@@ -1,0 +1,41 @@
+<% include ../partials/header %>
+
+
+<div class="container">
+		<header class="jumbotron" id="nvbr">
+			<div class="container">
+		       <h1 >VIEW ALL THE INDIAN TOURISTS SPOTS</h1>
+				<p class="font-weight-bold font-italic">watch all the places and their information before going to any of the place of India. Be a participant. Sign up and help people with your thoughts and opinions by adding your own place where you just have visited. Sign up now and add a tourist place to help others.. Give your honest comment in each of the places you just have visited.
+				</p>
+				<a class="btn btn-primary" href="/campgrounds/new">Add new TOURIST SPOT</a>
+			</div>  
+		</header>
+
+
+		<div class="row text-center" style="display:flex; flex-wrap: wrap;">
+			<% campgrounds.forEach( (campground)=>{ %>
+			<div class="col-md-3 col-sm-6">
+				<div class="thumbnail" style="border: solid 1px black">
+				  <img src = "<%= campground.image %>">
+					<div class="caption">
+						<h4><%= campground.name %></h4>
+						<p>
+				            <em>Submitted By
+				            <%= campground.author.username %></em>
+			          	</p>
+				
+					</div>
+					<p>
+					 <a href="/campgrounds/<%= campground._id %>" class="btn btn-primary">More Info</a>
+					</p>
+				</div>
+			</div>
+			<% }); %>
+	</div>
+
+		
+
+	<% include ../partials/footer %>
+	
+	</div>
+	
