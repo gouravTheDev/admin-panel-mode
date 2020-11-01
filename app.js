@@ -59,8 +59,8 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(adminRoutes);
 app.use(indexRoutes);
+app.use(adminRoutes);
 
 const port = process.env.PORT;
 
